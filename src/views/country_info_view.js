@@ -13,7 +13,7 @@ CountryInfoView.prototype.bindEvents = function(){
     this.selected = data.detail;
     this.clear(infoView);
     const name = this.selected.name;
-    infoView.appendChild(this.createHeader(name));
+    // infoView.appendChild(this.createHeader(name));
 
     const region = this.selected.region;
     infoView.appendChild(this.createDetail(region, 'In the region'))
@@ -23,7 +23,6 @@ CountryInfoView.prototype.bindEvents = function(){
 
     const flag = this.selected.flag;
     infoView.appendChild(this.createImage(flag));
-
 
     const timerId = window.setInterval(()=>{
       if (!this.selected){return}
@@ -61,10 +60,12 @@ CountryInfoView.prototype.createDetail = function (detail, descriptiveText) {
 };
 
 CountryInfoView.prototype.createImage = function (url) {
+    const imageContainer = document.createElement('div');
     const image = document.createElement('img');
     image.src = url
-    image.style.maxWidth = "200px";
-    return image
+    imageContainer.classList.add("flag");
+    imageContainer.appendChild(image);
+    return imageContainer;
 };
 
 CountryInfoView.prototype.clear = function(infoView){

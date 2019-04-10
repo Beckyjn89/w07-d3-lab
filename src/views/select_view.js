@@ -14,7 +14,7 @@ SelectView.prototype.bindEvents = function(){
       data.detail.forEach((name)=>{
         dropdown.appendChild(this.createOption(name));
       });
-      this.renderDefault();
+      // this.renderDefault();
   });
 
 };

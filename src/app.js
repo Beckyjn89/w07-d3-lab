@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
   country.bindEvents();
   country.getAll();
 
-  timetest = timezoneHelper.convert(new Date(), -05);
-  console.log(timetest);
+  console.log('dafuq?');
 
 });
